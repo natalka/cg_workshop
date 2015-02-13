@@ -14,7 +14,10 @@
         .navbar-header
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
-          Links should go here
+          Links should go here:
+          = current_user.email
+          is
+          = current_user.admin? ? ' an admin' : ' a regular user'
     .container-fluid
       .row
         .col-lg-12
