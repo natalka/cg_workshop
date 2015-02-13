@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
   expose(:review)
   expose(:product)
 
@@ -23,7 +23,9 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def review_params
-      params.require(:review).permit(:content, :rating)
-    end
+
+  def review_params
+    params.require(:review).permit(:content, :rating, :user_id)
+  end
+
 end
