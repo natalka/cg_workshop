@@ -42,13 +42,13 @@ class CategoriesController < ApplicationController
   end
 
   private
-    def category_params
-      params.require(:category).permit(:name)
-    end
+  def category_params
+    params.require(:category).permit(:name)
+  end
 
   protected
-    def authenticate_admin
-      redirect_to :new_user_session unless current_user && current_user.admin?
-    end
+  def authenticate_admin
+    redirect_to :new_user_session unless current_user && current_user.admin?
+  end
 
 end
