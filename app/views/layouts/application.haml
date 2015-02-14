@@ -14,10 +14,18 @@
         .navbar-header
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
-          Links should go here:
-          = current_user.email
-          is
-          = current_user.admin? ? ' an admin' : ' a regular user'
+          - if current_user
+            = current_user.email
+            is
+            = current_user.admin? ? ' an admin' : ' a regular user'
+            |
+            = link_to "Log out", destroy_user_session_path, :method => :delete
+          - else
+            - if controller_name != 'sessions'
+              = link_to "Sign in", new_user_session_path
+            |
+            - if controller_name != 'registrations'
+              = link_to "Sign up", new_user_registration_path
     .container-fluid
       .row
         .col-lg-12

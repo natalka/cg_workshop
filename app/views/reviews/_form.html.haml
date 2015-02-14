@@ -5,7 +5,8 @@
       %ul
         - review.errors.full_messages.each do |msg|
           %li= msg
-  = f.hidden_field :user_id, value: current_user.id
+  - if defined?(current_user) && current_user.present?
+    = f.hidden_field :user_id, value: current_user.id
   .form-group
     = f.label :content
     = f.text_area :content, class: 'form-control'
