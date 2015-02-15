@@ -20,6 +20,6 @@ Category.create!([
   {id: 2, name: "Pets"}
 ])
 Product.create!([
-  {title: "Doggy Dog", description: "A kind of lovely animal", price: 30.99, category_id: 2, user_id: 1},
-  {title: "Kitty Cat", description: "just like KitKat", price: 99.88, category_id: 2, user_id: 1}
+  {id: 4, title: "Doggy Dog", description: "A kind of lovely animal", price: 30.99, category_id: 2, user_id: 1},
+  {id: 5, title: "Kitty Cat", description: "just like KitKat", price: 99.88, category_id: 2, user_id: 1}
 ])
