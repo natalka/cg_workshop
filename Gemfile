@@ -22,6 +22,7 @@ gem 'konf'
 
 group :development do
   gem 'spring'
+  gem 'seed_dump'
 end
 
 group :development, :test do

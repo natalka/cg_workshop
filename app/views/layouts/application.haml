@@ -19,6 +19,9 @@
             = current_user.admin? ? ' admin' : ''
             = link_to current_user.email, user_path(current_user)
             |
+            - if current_user.admin?
+              = link_to 'Add a new category', new_category_path
+              |
             = link_to "Log out", destroy_user_session_path, :method => :delete
           - else
             - if controller_name != 'sessions'
@@ -26,6 +29,8 @@
             |
             - if controller_name != 'registrations'
               = link_to "Sign up", new_user_registration_path
+          |
+          = link_to "Home", root_path
     .container-fluid
       .row
         .col-lg-12

@@ -1,17 +1,21 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = category.name
-
+  %h4
+    - if current_user
+      = link_to "#{category.name}", edit_category_path(category)
+    - else
+      = category.name
 %p
   - category.products.each do |product|
-    = product.title
-
-%p
-  %h3 New product
-  = render 'products/form'
-
-= link_to 'Edit', edit_category_path(category)
-\|
+    %ul
+      = link_to product.title, category_product_path(category, product)
+%br
 = link_to 'Back', categories_path, class: 'btn btn-primary'
+
+%br
+%br
+- if current_user
+  %p
+    %h4 Add a new product:
+    = render 'products/form'

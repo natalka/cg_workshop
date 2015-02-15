@@ -1,6 +1,8 @@
-%p= review.content
-%p
-  %b= "Rating: #{review.rating}"
-  %em= "on #{review.created_at}"
-  - if review.try(:author)
-    %em= review.author
+.col-xs-6
+  %p.bg-info
+    = review.content
+  %p
+    %b= "Rating: #{review.rating}"
+    %em= "on #{l review.created_at, format: :submitted}"
+    - if review.try(:author)
+      %em= "by #{review.author}"

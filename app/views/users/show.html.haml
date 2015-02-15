@@ -1,0 +1,15 @@
+%p#notice= notice
+%p#error= flash[:error]
+
+.col-xs-2
+  = image_tag "avatar.png", size: "200x200", class: "style_image"
+  %h3
+    = user.fullname
+  %em
+    = user.role
+    since
+    = user.user_since
+.col-xs-10
+  %h4
+    = "#{user.fullname}'s last reviews:"
+  = render user.reviews.last(5).reverse

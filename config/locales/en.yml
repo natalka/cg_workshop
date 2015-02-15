@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      submitted: "%d-%m-%y"
+      since_date: "%d-%m-%Y"

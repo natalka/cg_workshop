@@ -169,6 +169,9 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     sass (3.4.8)
+    seed_dump (3.2.1)
+      activerecord (~> 4)
+      activesupport (~> 4)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
     simple_form (3.1.0.rc2)
@@ -235,6 +238,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   rspec-rails
   sass-rails!
+  seed_dump
   shoulda-matchers
   simple_form (~> 3.1.0rc)
   spring
