@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  get '/users/:id', to: 'users#show', as: 'user'
 
   root 'categories#index'
 end
